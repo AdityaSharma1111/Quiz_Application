@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=timer" />
+</head>
+<body class="bg-sky-300 grid place-content-center h-screen">
+    
+    <!-- Quiz Configuration starts -->
+    <div id="configArea" class="bg-white rounded-md border-1 p-4">
+        <div class="flex flex-col items-center">
+            <h1 class="font-bold m-2">Quiz App</h1>
+            <h3>Select Category</h3>
+            <div id="topic" class="grid grid-cols-1 md:grid-cols-2 gap-2 m-2 mb-6 mt-6">
+                <button id="topic1" class="border-2 rounded-md border-indigo-300 p-2 hover:bg-blue-300 hover:text-white">Programming</button>
+                <button id="topic2" class="border-2 rounded-md border-indigo-300 p-2 hover:bg-blue-300 hover:text-white">Geography</button>
+                <button id="topic3" class="border-2 rounded-md border-indigo-300 p-2 hover:bg-blue-300 hover:text-white">Maths</button>
+                <button id="topic4" class="border-2 rounded-md border-indigo-300 p-2 hover:bg-blue-300 hover:text-white">History</button>
+            </div>
+            <div>
+                <h3>Number of Questions</h3>
+                <div id="numOfQuestions" class="flex flex-row gap-2 justify-evenly">
+                    <button id="n1" class="border-2 rounded-md border-indigo-300 p-[4px] hover:bg-blue-300 hover:text-white">05</button>
+                    <button id="n2" class="border-2 rounded-md border-indigo-300 p-[4px] hover:bg-blue-300 hover:text-white">10</button>
+                    <button id="n3" class="border-2 rounded-md border-indigo-300 p-[4px] hover:bg-blue-300 hover:text-white">15</button>
+                    <button id="n4" class="border-2 rounded-md border-indigo-300 p-[4px] hover:bg-blue-300 hover:text-white">20</button>
+                </div> 
+            </div>
+            <div>
+                <button id="startBtn" class="border-2 rounded-md bg-blue-600 text-white border-indigo-300 p-2 hover:bg-blue-800 hover:text-white mt-6">Start Quiz</button>
+            </div>
+        </div>
+    </div>
+    <!-- Quiz Configuration ends -->
+
+    <!-- Quiz area starts -->
+    <div id="quizArea" class="hidden">
+        <div class="bg-white rounded-md border-1 p-4" style="word-wrap:break-word; white-space: normal;">
+            <div class="flex flex-col items-center">
+                <h1 class="font-bold m-2">Quiz App</h1>
+                <div class="flex flex-row justify-between">
+                    <div id="qStatus">
+                        
+                    </div>
+                    <div>
+                        <div class="border-l-2 flex border-black ml-4 mr-4">
+                            <div class="material-symbols-outlined ml-4">
+                                timer
+                            </div>
+                            <div class="ml-1">
+                                : <strong id="timer"></strong><strong>s</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4">
+                <h3 id="currQuestion"></h3>
+            </div>
+            <div id="options" class="flex flex-col gap-2 w-80 mt-2">
+
+                <button id="opt1" class="border-2 rounded-md border-indigo-300 p-2 hover:bg-blue-300 hover:text-white text-left"></button>
+                <button id="opt2" class="border-2 rounded-md border-indigo-300 p-2 hover:bg-blue-300 hover:text-white text-left"></button>
+                <button id="opt3" class="border-2 rounded-md border-indigo-300 p-2 hover:bg-blue-300 hover:text-white text-left"></button>
+                <button id="opt4" class="border-2 rounded-md border-indigo-300 p-2 hover:bg-blue-300 hover:text-white text-left"></button>
+            </div>
+            <div class="flex justify-end">
+                <button id="nextBtn" class=" border-2 rounded-md bg-blue-600 text-white border-indigo-300 p-2 pl-4 pr-4 hover:bg-blue-800 hover:text-white mt-6">
+                    Next
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Quiz area end -->
+
+    <!-- Quiz Result starts -->
+    <div  id="resultArea" class="hidden">
+        <div class="bg-white rounded-md flex flex-col items-center border-1 p-4">
+            <h1 class="font-bold m-2">Quiz App</h1>
+            <img class="w-[92px] m-4 h-auto" src="https://cdn-icons-png.flaticon.com/512/7657/7657766.png" alt="img">
+            <strong class="m-2">Quiz Completed !!</strong>
+            <p id="result"></p>
+            <button id="tryAgain" class="border-2 rounded-md m-3 p-2 bg-blue-600 text-white hover:bg-blue-800 hover:text-white">Try Again</button>
+        </div>
+    </div>
+    <!-- Quiz Result ends -->
+
+    <script src="./question.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
